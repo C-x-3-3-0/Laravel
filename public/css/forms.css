@@ -1,0 +1,35 @@
+/* Style for the label */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  /* Style for the form input elements */
+  input[type="radio"], input[type="email"], input[type="text"], input[type="submit"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  /* Style for the submit button */
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  /* Style for the link container */
+  .link-container {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  /* Style for the link */
+  .link-container a {
+    color: #007bff;
+    text-decoration: none;
+  }

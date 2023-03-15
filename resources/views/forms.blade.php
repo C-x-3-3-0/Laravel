@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>MELDEN SIE SICH AN</title>
-  </head>
-  <body>
-    <form method="post">
+    <link rel="stylesheet" href="{{ asset('css/forms.css') }}">
+</head>
+
+<body>
+    <form method="POST" action="">
         @csrf
-        <h1>Melden sie sich an</h1>
-        <input name="email" type="email" placeholder="Email" id="email"><br>
-        <input name="lastname" type="text" placeholder="Name" id="lastname"><br>
-        <input name="firstname" type="text" placeholder="Vorname" id="firstname"><br>
-        <input name="title" type="text" placeholder="Titel des Events" id="title"><br>
-        <input name="date" type="date" placeholder="Datum" id="date"><br>
-        <button type="submit">Submit</button>
-      </div>
+        <div>
+            <label for="answer">Möchten sie sich anmelden?</label>
+            <input name="answer" value="yes" id="answer" type="radio"> Ja
+            <input name="answer" value="No" id="answer" type="radio">Nein
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="lastname">Name:</label>
+            <input type="text" id="lastname" name="lastname" required>
+        </div>
+
+        <div>
+            <label for="firstname">Vorname:</label>
+            <input type="text" id="firstname" name="firstname" required>
+        </div>
+        <div>
+            <input type="submit" value="Anmelden">
+        </div>
     </form>
-  </body>
+
+
+    <div class="link-container">
+        <a href="/form_application/applications">Anmeldung liste anzeigen</a>
+    </div>
+</body>
+
 </html>
