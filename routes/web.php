@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EventController;
+use App\Models\Application;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
