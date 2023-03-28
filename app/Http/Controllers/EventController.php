@@ -13,13 +13,13 @@ class EventController extends Controller
  public function show($id){
         $event = Event::findOrFail($id);
 
-        return view('form_application', [
+        return view('event', [
             'event' => $event
             ]);
     }
 
     public function list(){
-        $events = Event::all();
+        $events = Event::with('applications')->get();
         return view('events', [
             'events' => $events
    ]);
