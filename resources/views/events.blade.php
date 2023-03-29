@@ -8,17 +8,19 @@
     <title>Events</title>
     <link rel="stylesheet" href="{{ asset('css/events.css') }}">
 </head>
-
+@extends('layouts.app')
+@section('title', 'Events')
+@section('content')
 <body>
     <p>Events:</p>
     <ul>
         @foreach ($events as $event)
             <li> ({{ $event->applications->count() }}) {{ $event->title }} <a
-                    href="/event/{{ $event->id }}">Beitreten</a> </li>
+                    href="/event/{{ $event->id }}">Join</a> </li>
         @endforeach
 
     </ul>
-
+    @endsection
 
 
 

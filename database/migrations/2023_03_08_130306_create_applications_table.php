@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-
             $table->string('email') -> nullable();
             $table->string('lastname');
             $table->string('firstname');
             $table->string('title');
             $table->string('date');
+            $table->unsignedBigInteger('event_id');
+            $table->string('answer');
 
         });
     }

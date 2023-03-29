@@ -8,10 +8,16 @@ class applicationController extends Controller
 {
     public function create($id){
         $request->validate([
-            'firstname' => ['required', 'max:255'],
-            'lastname' => ['required', 'max:255'],
-            'email' => ['required', 'email'],
-            'answer' => ['required', 'max:3', 'min:2'],
+            'firstname' => 'required'|'max:255',
+            'lastname' => 'required'| 'max:255',
+            'email' => 'required'|'email',
+            'answer' => 'required'| 'max:3', 'min:2',[
+                'email.required' => 'Bitte Email-Adresse eingeben',
+                'email.email' => 'Bitte gültige Email-Adresse eingeben',
+                'firstname.required' => 'Bitte Name eingeben',
+                'lastname.required' => 'Bitte Name eingeben',
+                'answer.required' => 'Bitte Antwort auswählen',
+            ]
         ]);
 
         $application = new Application();
@@ -22,7 +28,7 @@ class applicationController extends Controller
         $application->event_id = $id;
         $application->save();
 
-        return redirect('/event/' . $id . '/applications');
+        return redirect('/event'. '/' . $id);
     }
 
     public function  list($id){
@@ -31,6 +37,7 @@ class applicationController extends Controller
         $declinedApplications = Application::where('answer', 'no')->count();
 
         return view('applications',[
+                'id' => $id,
                 'applications'=> $applications,
                 'declinedApplications' => $declinedApplications,
             ]

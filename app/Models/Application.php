@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Application extends Model
 {
     use HasFactory;
-
-    public $guarded = [];
+    public $table = 'applications';
+    public function event(){
+        return $this->belongsTo(Event::class);
+    }
 }
