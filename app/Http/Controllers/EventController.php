@@ -28,8 +28,8 @@ class EventController extends Controller
     public function show($id){
         $event = Event::findOrFail($id);
 
-        return view('events', [
-            'events' => $event
+        return view('form_application', [
+            'event' => $event
             ]);
     }
 
